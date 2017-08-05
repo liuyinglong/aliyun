@@ -1,14 +1,43 @@
-# 阿里云API
+# 阿里云 API 签名
 
 > github:[https://github.com/liuyinglong/aliyun](https://github.com/liuyinglong/aliyun);  
 > npm :[https://www.npmjs.com/package/aliyun-apisign](https://www.npmjs.com/package/aliyun-apisign)
+
+## 阿里云已开放的API
+[https://develop.aliyun.com/tools/openapilist](https://develop.aliyun.com/tools/openapilist)
+
+## install
+``
+npm install aliyun-apisign --save
+``
+
+## use
+```js
+let AliCloudClient = require("../aliCloudClient");
+
+let aliClient=new AliCloudClient({
+    AccessKeyId:"your AccessKeyId",
+    AccessKeySecret:"your AccessKeySecret",
+    serverUrl:"http://alidns.aliyuncs.com"
+});
+
+//获取解析列表
+aliClient.get("/",{
+    Action:"DescribeDomainRecords",
+    DomainName:"yourDomain.cn"
+}).then(function(data){
+    console.log(data.body)
+}).catch(function(err){
+    console.log(err);
+});
+```
+
 
 ## 小案例-》利用阿里云开放api进行动态域名解析
 
 > 每分钟获取一次公网 IP，如果检测到公网IP发生了变化，则调用aliyun的开放接口进行更新
 
 ```js
-
 let AliCloudClient = require("../aliCloudClient");
 let Req = require("../request");
 let request = new Req();
@@ -93,4 +122,3 @@ schedule.scheduleJob("0 * * * * *", function () {
 });
 
 ```
-``
