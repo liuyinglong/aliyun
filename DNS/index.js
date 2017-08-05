@@ -1,13 +1,7 @@
-# 阿里云API
+/**
+ * Created by liuyinglong on 2017/8/5.
+ */
 
-> github:[https://github.com/liuyinglong/aliyun](https://github.com/liuyinglong/aliyun);  
-> npm :[https://www.npmjs.com/package/aliyun-apisign](https://www.npmjs.com/package/aliyun-apisign)
-
-## 小案例-》利用阿里云开放api进行动态域名解析
-
-> 每分钟获取一次公网 IP，如果检测到公网IP发生了变化，则调用aliyun的开放接口进行更新
-
-```js
 
 let AliCloudClient = require("../aliCloudClient");
 let Req = require("../request");
@@ -91,6 +85,3 @@ Promise.all([getMyIp(), getDomainRecords()]).then(function (result) {
 schedule.scheduleJob("0 * * * * *", function () {
     watchIpChange();
 });
-
-```
-``
