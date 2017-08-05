@@ -1,0 +1,24 @@
+{
+  "name": "aliyun-apisign",
+  "version": "1.0.2",
+  "description": "阿里云 nodejs  SDK",
+  "main": "./aliCloudClient",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/liuyinglong/aliyun.git"
+  },
+  "author": "liuyinglong",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/liuyinglong/aliyun/issues"
+  },
+  "homepage": "https://github.com/liuyinglong/aliyun#readme",
+  "dependencies": {
+    "@alicloud/pop-core": "^1.4.0",
+    "node-fetch": "^1.7.1",
+    "node-schedule": "^1.2.3"
+  }
+}
